@@ -11,3 +11,31 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+:root {
+  /* Tipografia (fonte não define via CSS root, mas deixado como referência) */
+  --fonte-titulos: 'Prata', serif;
+  --fonte-corridos: 'Montserrat', sans-serif;
+
+  /* Cores principais */
+  --cor-principal-1: #6278F7;
+  --cor-principal-2: #95FFD4;
+  --cor-principal-3: #F2F2F2;
+
+  /* Fundos dos times */
+  --fundo-programacao: #D9F7E9;
+  --fundo-front-end: #E8F8FF;
+  --fundo-data-science: #F0F8E2;
+  --fundo-devops: #FDE7E8;
+  --fundo-ux-design: #FAE9F5;
+  --fundo-mobile: #FFF5D9;
+  --fundo-inovacao: #FFEEED;
+
+  /* Destaques dos times */
+  --destaque-programacao: #57C278;
+  --destaque-front-end: #82CFFA;
+  --destaque-data-science: #A6D157;
+  --destaque-devops: #E06B69;
+  --destaque-ux-design: #DB6EBF;
+  --destaque-mobile: #FFBA05;
+  --destaque-inovacao: #FF8A29;
+}
