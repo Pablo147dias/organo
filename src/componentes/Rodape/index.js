@@ -9,7 +9,7 @@ const Rodape = () => {
                 <a href="https://www.twitter.com/"><img src="/imagens/tw.png" alt="Twitter" /></a>
             </div>
             <img src="/imagens/logo.png" alt="Logo da Organo" />
-            <p>Desenvolvido por Alura</p>
+            <p>Desenvolvido por Pablo Dias. com colaboração de Alura</p>
         </footer>
     )
 }
