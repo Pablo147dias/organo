@@ -1,0 +1,11 @@
+.rodape{
+    background-color: var(--cor-principal-1);
+    display: flex;
+    justify-content: space-around;
+    padding: 32px;
+    color: white;
+}
+.redes{
+    display: flex;
+    gap: 25px;
+}

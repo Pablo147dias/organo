@@ -4,6 +4,7 @@ import Banner from './componentes/Banner/Banner';
 import CampoTexto from './componentes/CampoTexto/CampoTexto';
 import Formulario from './componentes/Formulario';
 import Time from './componentes/Time';
+import Rodape from './componentes/Rodape';
 
 function App() {
 
@@ -59,9 +60,12 @@ function App() {
       <Banner />
       <Formulario times={times.map(time => time.nome)}  aoColaboradorCadastrado={aoNovocolaborardorAdicionado}/>
       
-    {times.map(time => <Time key={time.nome} nome={time.nome} corPrimaria={time.corPrimaria} corSecundaria={time.corSecundaria} />)}
-
+    {times.map(time => <Time 
     
+    colaboradores={colaboradores.filter(colaborador => colaborador.time === time.nome)}
+    key={time.nome} nome={time.nome} corPrimaria={time.corPrimaria} corSecundaria={time.corSecundaria} />)}
+
+    <Rodape />
 
     </div>
   );
