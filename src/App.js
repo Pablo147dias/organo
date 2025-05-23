@@ -1,213 +1,275 @@
-import { useState } from 'react';
-import Banner from './componentes/Banner/Banner';
-import CampoTexto from './componentes/CampoTexto/CampoTexto';
-import Formulario from './componentes/Formulario';
-import Time from './componentes/Time';
-import Rodape from './componentes/Rodape';
+import { useState } from "react";
+import Banner from "./componentes/Banner";
+import Formulario from "./componentes/Formulario";
+import Rodape from "./componentes/Rodape";
+import Time from "./componentes/Time";
+import { v4 as uuidv4 } from 'uuid';
 
 function App() {
 
   const [times, setTimes] = useState([
     {
+      id: uuidv4(),
       nome: 'Programação',
       cor: '#57C278'
     },
     {
-      nome: 'Frontend',
+      id: uuidv4(),
+      nome: 'Front-End',
       cor: '#82CFFA'
     },
     {
+      id: uuidv4(),
       nome: 'Data Science',
       cor: '#A6D157'
     },
     {
+      id: uuidv4(),
       nome: 'Devops',
       cor: '#E06B69'
     },
     {
+      id: uuidv4(),
       nome: 'UX e Design',
       cor: '#DB6EBF'
     },
     {
+      id: uuidv4(),
       nome: 'Mobile',
       cor: '#FFBA05'
     },
     {
+      id: uuidv4(),
       nome: 'Inovação e Gestão',
       cor: '#FF8A29'
-    }
-  ])
-
-  const [colaboradores, setColaboradores] = useState([
-    // Programação
-    {
-      nome: "Ana Silva",
-      cargo: "Desenvolvedora Back-end",
-      imagem: "https://randomuser.me/api/portraits/women/44.jpg",
-      time: "Programação"
     },
-    {
-      nome: "Carlos Souza",
-      cargo: "Desenvolvedor Full Stack",
-      imagem: "https://randomuser.me/api/portraits/men/45.jpg",
-      time: "Programação"
-    },
-    {
-      nome: "Fernanda Lima",
-      cargo: "Desenvolvedora Java",
-      imagem: "https://randomuser.me/api/portraits/women/46.jpg",
-      time: "Programação"
-    },
-    // Frontend
-    {
-      nome: "Lucas Pereira",
-      cargo: "Desenvolvedor React",
-      imagem: "https://randomuser.me/api/portraits/men/47.jpg",
-      time: "Frontend"
-    },
-    {
-      nome: "Marina Costa",
-      cargo: "UI Developer",
-      imagem: "https://randomuser.me/api/portraits/women/48.jpg",
-      time: "Frontend"
-    },
-    {
-      nome: "João Mendes",
-      cargo: "Desenvolvedor Angular",
-      imagem: "https://randomuser.me/api/portraits/men/49.jpg",
-      time: "Frontend"
-    },
-    // Data Science
-    {
-      nome: "Paula Torres",
-      cargo: "Cientista de Dados",
-      imagem: "https://randomuser.me/api/portraits/women/50.jpg",
-      time: "Data Science"
-    },
-    {
-      nome: "Rafael Dias",
-      cargo: "Analista de Dados",
-      imagem: "https://randomuser.me/api/portraits/men/51.jpg",
-      time: "Data Science"
-    },
-    {
-      nome: "Juliana Alves",
-      cargo: "Engenheira de Dados",
-      imagem: "https://randomuser.me/api/portraits/women/52.jpg",
-      time: "Data Science"
-    },
-    // Devops
-    {
-      nome: "Bruno Martins",
-      cargo: "DevOps Engineer",
-      imagem: "https://randomuser.me/api/portraits/men/53.jpg",
-      time: "Devops"
-    },
-    {
-      nome: "Gabriela Rocha",
-      cargo: "SRE",
-      imagem: "https://randomuser.me/api/portraits/women/54.jpg",
-      time: "Devops"
-    },
-    {
-      nome: "Eduardo Lima",
-      cargo: "Cloud Architect",
-      imagem: "https://randomuser.me/api/portraits/men/55.jpg",
-      time: "Devops"
-    },
-    // UX e Design
-    {
-      nome: "Patrícia Souza",
-      cargo: "UX Designer",
-      imagem: "https://randomuser.me/api/portraits/women/56.jpg",
-      time: "UX e Design"
-    },
-    {
-      nome: "Thiago Ramos",
-      cargo: "UI Designer",
-      imagem: "https://randomuser.me/api/portraits/men/57.jpg",
-      time: "UX e Design"
-    },
-    {
-      nome: "Larissa Gomes",
-      cargo: "Product Designer",
-      imagem: "https://randomuser.me/api/portraits/women/58.jpg",
-      time: "UX e Design"
-    },
-    // Mobile
-    {
-      nome: "Vinícius Oliveira",
-      cargo: "Mobile Developer",
-      imagem: "https://randomuser.me/api/portraits/men/59.jpg",
-      time: "Mobile"
-    },
-    {
-      nome: "Amanda Fernandes",
-      cargo: "iOS Developer",
-      imagem: "https://randomuser.me/api/portraits/women/60.jpg",
-      time: "Mobile"
-    },
-    {
-      nome: "Felipe Castro",
-      cargo: "Android Developer",
-      imagem: "https://randomuser.me/api/portraits/men/61.jpg",
-      time: "Mobile"
-    },
-    // Inovação e Gestão
-    {
-      nome: "Renata Barros",
-      cargo: "Product Owner",
-      imagem: "https://randomuser.me/api/portraits/women/62.jpg",
-      time: "Inovação e Gestão"
-    },
-    {
-      nome: "Marcelo Pinto",
-      cargo: "Scrum Master",
-      imagem: "https://randomuser.me/api/portraits/men/63.jpg",
-      time: "Inovação e Gestão"
-    },
-    {
-      nome: "Sofia Martins",
-      cargo: "Agile Coach",
-      imagem: "https://randomuser.me/api/portraits/women/64.jpg",
-      time: "Inovação e Gestão"
-    }
   ]);
 
-  const aoNovocolaborardorAdicionado = (colaborador) => {
-    setColaboradores([...colaboradores, colaborador]);
+  const inicial = [
+    {
+      id: uuidv4(),
+      favorito: false,
+      nome: 'JULIANA AMOASEI',
+      cargo: 'Desenvolvedora de software e instrutora',
+      imagem: 'https://www.alura.com.br/assets/img/lideres/juliana-amoasei.1647533644.jpeg',
+      time: times[0].nome
+    },
+    {
+      id: uuidv4(),
+      favorito: false,
+      nome: 'DANIEL ARTINE',
+      cargo: 'Engenheiro de Software na Stone Age',
+      imagem: 'https://www.alura.com.br/assets/img/lideres/daniel-artine.1647533644.jpeg',
+      time: times[0].nome
+    },
+    {
+      id: uuidv4(),
+      favorito: false,
+      nome: 'GUILHERME LIMA',
+      cargo: 'Desenvolvedor Python e JavaScript na Alura',
+      imagem: '	https://www.alura.com.br/assets/img/lideres/guilherme-lima.1647533644.jpeg',
+      time: times[0].nome
+    },
+    {
+      id: uuidv4(),
+      nome: 'PAULO SILVEIRA',
+      cargo: 'Hipster e CEO da Alura',
+      imagem: 'https://www.alura.com.br/assets/img/lideres/paulo-silveira.1647533644.jpeg',
+      time: times[0].nome
+    },
+    {
+      id: uuidv4(),
+      favorito: false,
+      nome: 'JULIANA AMOASEI',
+      cargo: 'Desenvolvedora de software e instrutora',
+      imagem: 'https://www.alura.com.br/assets/img/lideres/juliana-amoasei.1647533644.jpeg',
+      time: times[1].nome
+    },
+    {
+      id: uuidv4(),
+      nome: 'DANIEL ARTINE',
+      cargo: 'Engenheiro de Software na Stone Age',
+      imagem: 'https://www.alura.com.br/assets/img/lideres/daniel-artine.1647533644.jpeg',
+      time: times[1].nome
+    },
+    {
+      id: uuidv4(),
+      favorito: false,
+      nome: 'GUILHERME LIMA',
+      cargo: 'Desenvolvedor Python e JavaScript na Alura',
+      imagem: '	https://www.alura.com.br/assets/img/lideres/guilherme-lima.1647533644.jpeg',
+      time: times[1].nome
+    },
+    {
+      id: uuidv4(),
+      favorito: false,
+      nome: 'PAULO SILVEIRA',
+      cargo: 'Hipster e CEO da Alura',
+      imagem: 'https://www.alura.com.br/assets/img/lideres/paulo-silveira.1647533644.jpeg',
+      time: times[1].nome
+    },
+    {
+      id: uuidv4(),
+      favorito: false,
+      nome: 'JULIANA AMOASEI',
+      cargo: 'Desenvolvedora de software e instrutora',
+      imagem: 'https://www.alura.com.br/assets/img/lideres/juliana-amoasei.1647533644.jpeg',
+      time: times[2].nome
+    },
+    {
+      id: uuidv4(),
+      favorito: false,
+      nome: 'DANIEL ARTINE',
+      cargo: 'Engenheiro de Software na Stone Age',
+      imagem: 'https://www.alura.com.br/assets/img/lideres/daniel-artine.1647533644.jpeg',
+      time: times[2].nome
+    },
+    {
+      id: uuidv4(),
+      favorito: false,
+      nome: 'GUILHERME LIMA',
+      cargo: 'Desenvolvedor Python e JavaScript na Alura',
+      imagem: '	https://www.alura.com.br/assets/img/lideres/guilherme-lima.1647533644.jpeg',
+      time: times[2].nome
+    },
+    {
+      id: uuidv4(),
+      favorito: false,
+      nome: 'PAULO SILVEIRA',
+      cargo: 'Hipster e CEO da Alura',
+      imagem: 'https://www.alura.com.br/assets/img/lideres/paulo-silveira.1647533644.jpeg',
+      time: times[2].nome
+    },
+    {
+      id: uuidv4(),
+      nome: 'JULIANA AMOASEI',
+      cargo: 'Desenvolvedora de software e instrutora',
+      imagem: 'https://www.alura.com.br/assets/img/lideres/juliana-amoasei.1647533644.jpeg',
+      time: times[3].nome
+    },
+    {
+      id: uuidv4(),
+      favorito: false,
+      nome: 'DANIEL ARTINE',
+      cargo: 'Engenheiro de Software na Stone Age',
+      imagem: 'https://www.alura.com.br/assets/img/lideres/daniel-artine.1647533644.jpeg',
+      time: times[3].nome
+    },
+    {
+      id: uuidv4(),
+      favorito: false,
+      nome: 'GUILHERME LIMA',
+      cargo: 'Desenvolvedor Python e JavaScript na Alura',
+      imagem: '	https://www.alura.com.br/assets/img/lideres/guilherme-lima.1647533644.jpeg',
+      time: times[3].nome
+    },
+    {
+      id: uuidv4(),
+      nome: 'PAULO SILVEIRA',
+      cargo: 'Hipster e CEO da Alura',
+      imagem: 'https://www.alura.com.br/assets/img/lideres/paulo-silveira.1647533644.jpeg',
+      time: times[3].nome
+    },
+    {
+      id: uuidv4(),
+      favorito: false,
+      nome: 'JULIANA AMOASEI',
+      cargo: 'Desenvolvedora de software e instrutora',
+      imagem: 'https://www.alura.com.br/assets/img/lideres/juliana-amoasei.1647533644.jpeg',
+      time: times[4].nome
+    },
+    {
+      id: uuidv4(),
+      nome: 'DANIEL ARTINE',
+      cargo: 'Engenheiro de Software na Stone Age',
+      imagem: 'https://www.alura.com.br/assets/img/lideres/daniel-artine.1647533644.jpeg',
+      time: times[4].nome
+    },
+    {
+      id: uuidv4(),
+      favorito: false,
+      nome: 'GUILHERME LIMA',
+      cargo: 'Desenvolvedor Python e JavaScript na Alura',
+      imagem: '	https://www.alura.com.br/assets/img/lideres/guilherme-lima.1647533644.jpeg',
+      time: times[4].nome
+    },
+    {
+      id: uuidv4(),
+      nome: 'PAULO SILVEIRA',
+      cargo: 'Hipster e CEO da Alura',
+      imagem: 'https://www.alura.com.br/assets/img/lideres/paulo-silveira.1647533644.jpeg',
+      time: times[4].nome
+    },
+    {
+      id: uuidv4(),
+      favorito: false,
+      nome: 'JULIANA AMOASEI',
+      cargo: 'Desenvolvedora de software e instrutora',
+      imagem: 'https://www.alura.com.br/assets/img/lideres/juliana-amoasei.1647533644.jpeg',
+      time: times[5].nome
+    },
+    {
+      id: uuidv4(),
+      favorito: false,
+      nome: 'DANIEL ARTINE',
+      cargo: 'Engenheiro de Software na Stone Age',
+      imagem: 'https://www.alura.com.br/assets/img/lideres/daniel-artine.1647533644.jpeg',
+      time: times[5].nome
+    },
+    {
+      id: uuidv4(),
+      favorito: false,
+      nome: 'GUILHERME LIMA',
+      cargo: 'Desenvolvedor Python e JavaScript na Alura',
+      imagem: '	https://www.alura.com.br/assets/img/lideres/guilherme-lima.1647533644.jpeg',
+      time: times[5].nome
+    },
+    {
+      id: uuidv4(),
+      favorito: false,
+      nome: 'PAULO SILVEIRA',
+      cargo: 'Hipster e CEO da Alura',
+      imagem: 'https://www.alura.com.br/assets/img/lideres/paulo-silveira.1647533644.jpeg',
+      time: times[5].nome
+    },
+  ]
+
+  const [colaboradores, setColaboradores] = useState(inicial)
+
+  function deletarColaborador(id) {
+    setColaboradores(colaboradores.filter(colaborador => colaborador.id !== id));
   }
 
-  function deletarColaborador() {
-    console.log("Deletar colaborador: ");
-  }
-  function mudarCorTime(cor, nome) {
+  function mudarCor(cor, id) {
     setTimes(times.map(time => {
-      if (time.nome === nome) {
-        time.cor = cor; 
+      if(time.id === id) {
+        time.cor = cor;
       }
       return time;
+    }));
+  }
+
+  function cadastrarTime({ nome, cor }) {
+    setTimes([...times, { nome, cor, id: uuidv4() }])
+  }
+
+  function resolverFavorito(id) {
+    setColaboradores(colaboradores.map(colaborador => {
+      if(colaborador.id === id) colaborador.favorito = !colaborador.favorito;
+      return colaborador;
     }))
   }
 
+
   return (
-    <div className="App">
+    <div>
       <Banner />
-      <Formulario times={times.map(time => time.nome)}  aoColaboradorCadastrado={aoNovocolaborardorAdicionado}/>
-      
-    {times.map((time, indice) => 
-      <Time 
-        time={time}
-        mudarCor={mudarCorTime}
-        colaboradores={colaboradores.filter(colaborador => colaborador.time === time.nome)}
-        key={indice} nome={time.nome} corPrimaria={time.corPrimaria} corSecundaria={time.corSecundaria} 
-        aoDeletar={deletarColaborador}
-        />)
-        
-    }
-
-    <Rodape />
-
+      <Formulario aoCriarTime={cadastrarTime} times={times.map(time => time.nome)} aoCadastrar={colaborador => setColaboradores([...colaboradores, colaborador])} />
+      <section className="times">
+        <h1>Minha organização</h1>
+        {times.map((time, indice) => <Time mudarCor={mudarCor} key={indice} time={time} colaboradores={colaboradores.filter(colaborador => colaborador.time === time.nome)} aoDeletar={deletarColaborador} aoFavoritar={resolverFavorito} />)}
+      </section>
+      <Rodape />
     </div>
   );
 }

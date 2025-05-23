@@ -1,11 +1,17 @@
-.rodape{
-    background-color: var(--cor-principal-1);
+.footer {
+    background: #6278F7;
+    color: #FFF;
+    padding: 80px;
     display: flex;
-    justify-content: space-around;
-    padding: 32px;
-    color: white;
+    justify-content: space-between;
+    align-items: center;
 }
-.redes{
-    display: flex;
-    gap: 25px;
+
+.footer ul li {
+    display: inline-block;
+    margin-right: 32px;
+}
+
+.footer ul li:last-child {
+    margin-right: 0;
 }
