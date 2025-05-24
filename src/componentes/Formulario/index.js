@@ -11,7 +11,7 @@ const Formulario = ({ aoCadastrar, times, aoCriarTime }) => {
     const [imagem, setImagem] = useState('')
     const [time, setTime] = useState('')
     const [nomeTime, setNomeTime] = useState('')
-    const [corTime, setCorTime] = useState('')
+    const [corTime, setCorTime] = useState('#ffffff')
 
     const aoSubmeter = (evento) => {
         evento.preventDefault()
@@ -22,6 +22,10 @@ const Formulario = ({ aoCadastrar, times, aoCriarTime }) => {
             imagem,
             time
         })
+        setNome('')
+        setCargo('')
+        setImagem('')
+        setTime('')
     }
 
     return (
@@ -34,6 +38,7 @@ const Formulario = ({ aoCadastrar, times, aoCriarTime }) => {
                     placeholder='Digite seu nome '
                     valor={nome}
                     aoAlterado={valor => setNome(valor)}/>
+                    
                 <Campo
                     obrigatorio={true}
                     label='Cargo' 
@@ -43,6 +48,7 @@ const Formulario = ({ aoCadastrar, times, aoCriarTime }) => {
                 <Campo 
                     label='Imagem' 
                     placeholder='Informe o endereço da imagem '
+                    valor={imagem}
                     aoAlterado={valor => setImagem(valor)}/>
                 <ListaSuspensa 
                     obrigatorio={true}
@@ -51,7 +57,9 @@ const Formulario = ({ aoCadastrar, times, aoCriarTime }) => {
                     valor={time}
                     aoAlterado={valor => setTime(valor)}/>
                 <Botao texto='Criar card' />
+
             </form>
+            
             <form className="formulario" onSubmit={(evento) => {
                 evento.preventDefault()
                 aoCriarTime({ nome: nomeTime, cor: corTime })
