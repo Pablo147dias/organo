@@ -1,5 +1,9 @@
 
 import './rodape.css'
+import imgIg from './instagram.png'
+import imgtw from './twitter.png'
+import imgfb from './facebook.png'
+import logo from './logo.png'
 
 const Rodape = () => {
     return (<footer className="footer">
@@ -7,23 +11,23 @@ const Rodape = () => {
        <ul>
             <li>
                 <a href="facebook.com" target="_blank">
-                    <img src="/imagens/facebook.png" alt="" />
+                    <img src={imgfb} alt="" />
                 </a>
             </li>
             <li>
                 <a href="twitter.com" target="_blank">
-                    <img src="/imagens/twitter.png" alt="" />
+                    <img src={imgtw} alt="" />
                 </a>
             </li>
             <li>
                 <a href="instagram.com" target="_blank">
-                    <img src="/imagens/instagram.png" alt="" />
+                    <img src={imgIg} alt="" />
                 </a>
             </li>
         </ul>
        </section>
        <section>
-       <img src="/imagens/logo.png" alt="" />
+       <img src={logo} alt="" />
        </section>
        <section>
         <p>
