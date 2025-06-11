@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/NOME_REPOSITORIO/static/css/main.db63753d.css",
+    "main.js": "/NOME_REPOSITORIO/static/js/main.5840e3d4.js",
+    "index.html": "/NOME_REPOSITORIO/index.html",
+    "main.db63753d.css.map": "/NOME_REPOSITORIO/static/css/main.db63753d.css.map",
+    "main.5840e3d4.js.map": "/NOME_REPOSITORIO/static/js/main.5840e3d4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.db63753d.css",
+    "static/js/main.5840e3d4.js"
+  ]
+}
